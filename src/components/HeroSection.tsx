@@ -20,8 +20,8 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-medical-blue-dark">
-              Your Health, <span className="relative inline-block">
-                Connected
+              Your Health, Connected <span className="relative inline-block">
+                
                 <span className="absolute bottom-1 left-0 w-full h-2 bg-medical-green/20 rounded-full"></span>
               </span>
             </h1>
