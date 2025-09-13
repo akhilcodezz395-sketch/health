@@ -22,7 +22,7 @@ export const analyzeSymptoms = async (symptoms: string): Promise<SymptomAnalysis
     
     const API_KEY = "AIzaSyAvh0VuYH5m54DTzbzStHz2dA2plkMZdas";
     // Updated to use the correct API version
-    const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent";
+    const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent";
     
     // Create the prompt for Gemini
     const prompt = `A patient is experiencing the following symptoms: ${symptoms}. 
