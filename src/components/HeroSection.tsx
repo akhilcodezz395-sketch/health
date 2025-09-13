@@ -20,7 +20,8 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-medical-blue-dark">
-              Your Health, Connected <span className="relative inline-block">
+              Your Health, <span className="relative inline-block">
+                Connected
                 <span className="absolute bottom-1 left-0 w-full h-2 bg-medical-green/20 rounded-full"></span>
               </span>
             </h1>
@@ -30,31 +31,19 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-  <a
-    href="https://ai-symptom-predictor-ntw9.bolt.host/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Button
-      size="lg"
-      className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-300 hover:translate-y-[-2px]"
-    >
-      Check Symptoms
-      <ArrowRight className="ml-2 h-5 w-5" />
-    </Button>
-  </a>
-
-  <Link to="/find-doctors">
-    <Button
-      size="lg"
-      variant="outline"
-      className="text-lg px-8 py-6 rounded-full border-2 hover:bg-primary/5 transition-all duration-300"
-    >
-      Find Doctors
-    </Button>
-  </Link>
-</div>
-
+              <Link to="/symptom-checker">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-300 hover:translate-y-[-2px]">
+                  Check Symptoms
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/find-doctors">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 hover:bg-primary/5 transition-all duration-300">
+                  Find Doctors
+                </Button>
+              </Link>
+            </div>
+          </div>
           
           <div className="relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0">
             <div className="relative w-full max-w-md">
