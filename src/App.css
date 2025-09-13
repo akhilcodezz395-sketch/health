@@ -1,63 +1,150 @@
-
 /* Reset default Vite styling */
 #root {
   max-width: 100%;
   margin: 0;
   padding: 0;
   text-align: left;
+  font-family: 'Inter', sans-serif;
+  background-color: hsl(210, 40%, 98%);
+  transition: background-color 0.5s ease;
 }
 
-/* Custom design elements */
+/* Animated healthcare background */
 .health-background {
   background-image: radial-gradient(circle at top right, rgba(144, 202, 249, 0.15), transparent 70%),
                     radial-gradient(circle at bottom left, rgba(165, 214, 167, 0.15), transparent 70%);
   background-attachment: fixed;
+  background-size: cover;
+  animation: float-bg 30s ease-in-out infinite;
 }
 
-/* Improved card styling */
+@keyframes float-bg {
+  0%, 100% { background-position: 0% 0%, 100% 100%; }
+  50% { background-position: 10% 20%, 90% 80%; }
+}
+
+/* Card styling with glass effect */
 .card {
   border-radius: 1rem;
-  background-color: white;
-  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08), 0 2px 8px -3px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: all 0.4s ease;
 }
 
 .card:hover {
-  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.12), 0 4px 12px -3px rgba(0, 0, 0, 0.08);
-  transform: translateY(-2px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.12);
+  transform: translateY(-5px) scale(1.02);
 }
 
-/* Smooth transitions */
+/* Hover lift for all elements */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* Smooth transitions for links and buttons */
 a, button {
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Media query fixes */
+a:hover, button:hover {
+  cursor: pointer;
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Gradient text highlights */
+.medical-highlight {
+  background: linear-gradient(90deg, #90CAF9 0%, #A5D6A7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-text 4s ease-in-out infinite alternate;
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(90deg, #42A5F5, #66BB6A);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 6px 20px rgba(66, 165, 245, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(66, 165, 245, 0.4);
+}
+
+/* Glass buttons */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(8px);
+  color: #222;
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.btn-glass:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* Responsive tweaks */
 @media (max-width: 768px) {
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+
+  .card-container {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Accessibility improvements */
 :focus-visible {
-  outline: 2px solid hsl(var(--primary));
+  outline: 2px solid hsl(201, 90%, 50%);
   outline-offset: 2px;
 }
 
-/* Animation utilities */
-.hover-lift {
-  transition: transform 0.3s ease;
+/* Floating animation for icons or elements */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
 }
 
-.hover-lift:hover {
-  transform: translateY(-2px);
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
 }
 
-/* Medical section styling */
-.medical-highlight {
-  background: linear-gradient(90deg, #90CAF9 0%, #A5D6A7 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Gentle pulse animation for buttons or cards */
+.animate-gentle-pulse {
+  animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.95; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+/* Smooth fade-in for sections */
+.animate-fade-in {
+  animation: fade-in 1s ease forwards;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
