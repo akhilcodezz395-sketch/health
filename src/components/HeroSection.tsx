@@ -1,4 +1,3 @@
-
 import { ArrowRight, Stars, Stethoscope, Pill, Ambulance } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -31,14 +30,27 @@ const HeroSection = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/symptom-checker">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-300 hover:translate-y-[-2px]">
+              {/* Redirect to Bolt-hosted symptom checker */}
+              <a
+                href="https://ai-symptom-predictor-ntw9.bolt.host/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-lg shadow-primary/20 transition-all duration-300 hover:translate-y-[-2px]"
+                >
                   Check Symptoms
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-              </Link>
+              </a>
+
               <Link to="/find-doctors">
-                <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 hover:bg-primary/5 transition-all duration-300">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="text-lg px-8 py-6 rounded-full border-2 hover:bg-primary/5 transition-all duration-300"
+                >
                   Find Doctors
                 </Button>
               </Link>
