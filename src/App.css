@@ -1,0 +1,63 @@
+
+/* Reset default Vite styling */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+/* Custom design elements */
+.health-background {
+  background-image: radial-gradient(circle at top right, rgba(144, 202, 249, 0.15), transparent 70%),
+                    radial-gradient(circle at bottom left, rgba(165, 214, 167, 0.15), transparent 70%);
+  background-attachment: fixed;
+}
+
+/* Improved card styling */
+.card {
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.08), 0 2px 8px -3px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 30px -8px rgba(0, 0, 0, 0.12), 0 4px 12px -3px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Smooth transitions */
+a, button {
+  transition: all 0.3s ease;
+}
+
+/* Media query fixes */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Accessibility improvements */
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+}
+
+/* Animation utilities */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* Medical section styling */
+.medical-highlight {
+  background: linear-gradient(90deg, #90CAF9 0%, #A5D6A7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
